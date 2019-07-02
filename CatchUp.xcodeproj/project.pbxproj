@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5D0D4E5322CB543400C76D96 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D4E5222CB543400C76D96 /* Friend.swift */; };
 		5D0D4E5622CB5F2B00C76D96 /* PencilKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0D4E5522CB5F2B00C76D96 /* PencilKit.framework */; };
+		5D0D4E5822CB615100C76D96 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D4E5722CB615100C76D96 /* SceneDelegate.swift */; };
 		5D3BA53922CB4E9200DC797F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BA53822CB4E9200DC797F /* AppDelegate.swift */; };
 		5D3BA53B22CB4E9200DC797F /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BA53A22CB4E9200DC797F /* FriendsViewController.swift */; };
 		5D3BA53D22CB4E9200DC797F /* FriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BA53C22CB4E9200DC797F /* FriendDetailViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		5D0D4E5222CB543400C76D96 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		5D0D4E5522CB5F2B00C76D96 /* PencilKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PencilKit.framework; path = System/Library/Frameworks/PencilKit.framework; sourceTree = SDKROOT; };
+		5D0D4E5722CB615100C76D96 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5D3BA53522CB4E9200DC797F /* CatchUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatchUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3BA53822CB4E9200DC797F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D3BA53A22CB4E9200DC797F /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				5D3BA53822CB4E9200DC797F /* AppDelegate.swift */,
+				5D0D4E5722CB615100C76D96 /* SceneDelegate.swift */,
 				5D3BA53A22CB4E9200DC797F /* FriendsViewController.swift */,
 				5D3BA53C22CB4E9200DC797F /* FriendDetailViewController.swift */,
 				5D0D4E5122CB541C00C76D96 /* Model */,
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D0D4E5822CB615100C76D96 /* SceneDelegate.swift in Sources */,
 				5D3BA53D22CB4E9200DC797F /* FriendDetailViewController.swift in Sources */,
 				5D3BA53B22CB4E9200DC797F /* FriendsViewController.swift in Sources */,
 				5D0D4E5322CB543400C76D96 /* Friend.swift in Sources */,
