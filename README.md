@@ -13,3 +13,5 @@ This is a sample application showing scenes on iPadOS.
 ## Part 5: [Destructing the session](https://gist.github.com/BasThomas/10e894cc4f8b2004a728ca5f6be4ff19)
 
 ## Extra: [Replacing `UIApplicationDelegate` with `UIWindowSceneDelegate`](https://gist.github.com/BasThomas/8a0e608fa6b2e41502fcf002f4d3e47c)
+
+## Extra: [It Might Work™️](https://gist.github.com/BasThomas/5182899751cf6e114a857e81fec38dc3)
