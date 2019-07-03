@@ -19,7 +19,6 @@ class DetailSceneDelegate: UIResponder, UIWindowSceneDelegate {
   @available(iOS 13, *)
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let userActivity = connectionOptions.userActivities.first ?? session.stateRestorationActivity else { return }
-    //    let userActivity = Friend(name: "Bas", lastSeen: Date()).userActivity
     if !configure(window: window, with: userActivity) {
       print("Failed to restore from \(userActivity)")
     }
