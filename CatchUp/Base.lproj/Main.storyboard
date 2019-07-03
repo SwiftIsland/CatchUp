@@ -27,15 +27,43 @@
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="FriendDetailViewController" customModule="CatchUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FriendDetailViewController" title="Detail" id="JEX-9P-axG" customClass="FriendDetailViewController" customModule="CatchUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XKb-YP-hup">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Qzt-ww-6tw"/>
+                                    <constraint firstAttribute="width" constant="300" id="lFL-JR-mdj"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9D-kA-Ybh">
+                                <rect key="frame" x="8" y="242" width="398" height="48"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="phW-aq-GGx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="p9D-kA-Ybh" secondAttribute="trailing" constant="8" id="0rg-X4-2xd"/>
+                            <constraint firstItem="XKb-YP-hup" firstAttribute="top" secondItem="p9D-kA-Ybh" secondAttribute="bottom" constant="8" id="J7r-Rk-B1l"/>
+                            <constraint firstItem="p9D-kA-Ybh" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="8" id="QjS-lY-LNn"/>
+                            <constraint firstItem="XKb-YP-hup" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="da8-NV-bpS"/>
+                            <constraint firstItem="XKb-YP-hup" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="ivt-mf-vec"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Friend" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="doneButton" destination="p9D-kA-Ybh" id="Axi-3r-nWL"/>
+                        <outlet property="imageView" destination="XKb-YP-hup" id="mks-h8-bR9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>

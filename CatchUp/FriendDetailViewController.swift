@@ -7,25 +7,58 @@
 //
 
 import UIKit
-import PencilKit
 
 class FriendDetailViewController: UIViewController {
-
+  @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet weak var doneButton: UIButton!
+  @IBAction func doneButtonPressed(_ sender: Any) {
+    if #available(iOS 13.0, *) {
+      let session = view.window!.windowScene!.session
+      UIApplication.shared.requestSceneSessionDestruction(session, options: nil)
+    }
+  }
+  
+  var showsDoneButton = false {
+    didSet {
+      doneButton?.isHidden = !showsDoneButton
+    }
+  }
+  
   func configureView() {
     if let friend = friend {
         title = friend.name
+        imageView?.image = UIImage(named: "\(friend.name.lowercased()).jpg")
     }
+  }
 
-    let canvas = PKCanvasView(frame: view.bounds)
-    view.addSubview(canvas)
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    if #available(iOS 13.0, *) {
+      view.window?.windowScene?.userActivity = friend?.userActivity
+    }
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
     configureView()
+    doneButton.isHidden = !showsDoneButton
+  }
+
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    if #available(iOS 13.0, *) {
+      view.window?.windowScene?.userActivity = nil
+    }
   }
 
   var friend: Friend? {
     didSet { configureView() }
+  }
+}
+
+extension FriendDetailViewController {
+  static func loadFromStoryboard() -> FriendDetailViewController? {
+    let storyboard = UIStoryboard(name: "Main", bundle: .main)
+    return storyboard.instantiateViewController(withIdentifier: "FriendDetailViewController") as? FriendDetailViewController
   }
 }

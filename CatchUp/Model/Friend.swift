@@ -15,4 +15,16 @@ struct Friend: CustomStringConvertible {
   var description: String {
     "I've last seen \(name) on \(lastSeen)"
   }
+
+  static let userActivityType = "nl.basbroek.friend"
+  static let userActivityTitle = "showFriendDetail"
+  var userActivity: NSUserActivity {
+    let userActivity = NSUserActivity(activityType: Friend.userActivityType)
+    userActivity.title = Friend.userActivityTitle
+    userActivity.userInfo = [
+      "name": name,
+      "lastSeen": lastSeen
+    ]
+    return userActivity
+  }
 }

@@ -22,6 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     return true
   }
 
+  @available(iOS 13, *)
+  func application(_ application: UIApplication,
+                   configurationForConnecting connectingSceneSession: UISceneSession,
+                   options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+    if options.userActivities.first?.activityType == Friend.userActivityType {
+      return UISceneConfiguration(name: "Detail Configuration", sessionRole: connectingSceneSession.role)
+    }
+    return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+  }
+
   func applicationWillResignActive(_ application: UIApplication) {}
 
   func applicationDidEnterBackground(_ application: UIApplication) {}

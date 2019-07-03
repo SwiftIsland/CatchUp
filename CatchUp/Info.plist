@@ -40,6 +40,18 @@
 					<key>UISceneStoryboardFile</key>
 					<string>Main</string>
 				</dict>
+				<dict>
+					<key>UISceneClassName</key>
+					<string></string>
+					<key>UISceneDelegateClassName</key>
+					<string>CatchUp.DetailSceneDelegate</string>
+					<key>UISceneConfigurationName</key>
+					<string>Detail Configuration</string>
+					<key>UILaunchStoryboardName</key>
+					<string></string>
+					<key>UISceneStoryboardFile</key>
+					<string>DetailScene</string>
+				</dict>
 			</array>
 		</dict>
 	</dict>
@@ -73,6 +85,10 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>nl.basbroek.friend</string>
 	</array>
 </dict>
 </plist>

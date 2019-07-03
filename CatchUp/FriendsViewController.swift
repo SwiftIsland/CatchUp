@@ -16,6 +16,7 @@ class FriendsViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationItem.leftBarButtonItem = editButtonItem
+//    tableView.dragDelegate = self
 
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
     navigationItem.rightBarButtonItem = addButton
@@ -81,7 +82,17 @@ class FriendsViewController: UITableViewController {
 
     let object = friends[indexPath.row]
     cell.textLabel!.text = object.description
+    let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(didLongPressCell))
+    cell.addGestureRecognizer(longPressRecognizer)
     return cell
+  }
+
+  @objc func didLongPressCell(_ gesture: UILongPressGestureRecognizer) {
+    if #available(iOS 13.0, *) {
+      UIApplication.shared.requestSceneSessionActivation(nil, userActivity: friends.first?.userActivity, options: nil) { error in
+        print(error)
+      }
+    }
   }
 
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -98,3 +109,16 @@ class FriendsViewController: UITableViewController {
   }
 }
 
+//extension FriendsViewController: UITableViewDragDelegate {
+//  func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+//    let selectedFriend = friends[indexPath.row]
+//
+//    let userActivity = selectedFriend.userActivity
+//    let itemProvider = NSItemProvider(object: userActivity)
+//
+//    let dragItem = UIDragItem(itemProvider: itemProvider)
+//    dragItem.localObject = selectedFriend
+//
+//    return [dragItem]
+//  }
+//}
